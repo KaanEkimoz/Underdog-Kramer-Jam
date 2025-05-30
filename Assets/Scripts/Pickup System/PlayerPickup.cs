@@ -70,7 +70,39 @@ public class PlayerPickup : MonoBehaviour
 
     void Drop()
     {
-        heldObject.GetComponent<Rigidbody>().useGravity = true;
+        Vector3 dropPosition = heldObject.transform.position;
+        Vector3 extents = heldCollider.bounds.extents;
+
+        if (IsObstructed(dropPosition, extents))
+        {
+            float checkRadius = 1.0f;
+            int checkSteps = 16; // 360 / 22.5 = 16 kontrol yönü
+            bool foundSafe = false;
+
+            for (int i = 0; i < checkSteps; i++)
+            {
+                float angle = i * (360f / checkSteps);
+                Vector3 direction = Quaternion.Euler(0, angle, 0) * Vector3.forward;
+                Vector3 testPos = dropPosition + direction * checkRadius;
+
+                if (!IsObstructed(testPos, extents))
+                {
+                    heldObject.transform.position = testPos;
+                    foundSafe = true;
+                    break;
+                }
+            }
+
+            // Hiç boþ yer bulunamazsa en son çemberin orta noktasýna koy
+            if (!foundSafe)
+            {
+                Vector3 fallbackPos = dropPosition - transform.forward * 1.0f;
+                heldObject.transform.position = fallbackPos;
+            }
+        }
+
+        Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+        rb.useGravity = true;
         heldObject.transform.SetParent(null);
         pickupCamera.SetActive(false);
         heldObject = null;
