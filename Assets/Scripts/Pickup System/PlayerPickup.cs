@@ -7,8 +7,10 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private float maxPickupDistance = 3f;
     [SerializeField] private Transform pickupParent; // Kamera önüne objeyi konumlandýrmak için boþ bir GameObject
     [SerializeField] private LayerMask pickupLayer;
+    [SerializeField] private LayerMask obstacleLayer;
 
     private GameObject heldObject;
+    private Collider heldCollider;
 
     void Update()
     {
@@ -22,8 +24,14 @@ public class PlayerPickup : MonoBehaviour
 
         if (heldObject != null)
         {
-            heldObject.transform.position = pickupParent.position;
-            heldObject.transform.rotation = pickupParent.rotation;
+            Vector3 targetPos = pickupParent.position;
+            Quaternion targetRot = pickupParent.rotation;
+
+            if (!IsObstructed(targetPos, heldCollider.bounds.extents))
+            {
+                heldObject.transform.position = targetPos;
+                heldObject.transform.rotation = targetRot;
+            }
         }
     }
     void TryPickup()
@@ -33,6 +41,7 @@ public class PlayerPickup : MonoBehaviour
         {
             GameObject target = hit.collider.gameObject;
             heldObject = target;
+            heldCollider = heldObject.GetComponent<Collider>();
             heldObject.GetComponent<Rigidbody>().isKinematic = true;
             heldObject.transform.SetParent(pickupParent);
         }
@@ -43,5 +52,11 @@ public class PlayerPickup : MonoBehaviour
         heldObject.GetComponent<Rigidbody>().isKinematic = false;
         heldObject.transform.SetParent(null);
         heldObject = null;
+        heldCollider = null;
+    }
+    bool IsObstructed(Vector3 targetPos, Vector3 extents)
+    {
+        // Burada objenin boyutlarýna göre çakýþma kontrolü yapýyoruz
+        return Physics.CheckBox(targetPos, extents, Quaternion.identity, obstacleLayer);
     }
 }
