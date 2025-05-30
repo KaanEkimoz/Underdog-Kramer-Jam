@@ -470,10 +470,10 @@ GameObject:
   - component: {fileID: 3122855503829242450}
   - component: {fileID: 6268538116984687401}
   - component: {fileID: 4205022973215787166}
+  - component: {fileID: 6051630402415555284}
   - component: {fileID: 1272397862697293493}
   - component: {fileID: 1661717823}
   - component: {fileID: 8529972560728359104}
-  - component: {fileID: 6051630402415555284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -630,6 +630,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageMultiplier: 1
   SensibilityToSelfdamage: 0.25
+--- !u!114 &6051630402415555284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253983127304857660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af28b4ad7911d045ab7f73b26a9c9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkSphereRadius: 0.5
+  maxPickupDistance: 3
+  pickupParent: {fileID: 3548304480070938814}
+  pickupLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!82 &1272397862697293493
 AudioSource:
   m_ObjectHideFlags: 0
@@ -838,28 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Id: b7ef103c-6e78-41af-8322-5ac95ed05882
---- !u!114 &6051630402415555284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253983127304857660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af28b4ad7911d045ab7f73b26a9c9b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkSphereRadius: 0.5
-  maxPickupDistance: 3
-  pickupParent: {fileID: 3548304480070938814}
-  pickupLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  m_Id: 9d8e5973-1241-4937-b34f-555e2609ca04
 --- !u!1 &7383874627095517793
 GameObject:
   m_ObjectHideFlags: 0

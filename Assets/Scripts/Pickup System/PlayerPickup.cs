@@ -1,3 +1,4 @@
+using Unity.FPS.Gameplay;
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
@@ -7,10 +8,12 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private float maxPickupDistance = 3f;
     [SerializeField] private Transform pickupParent; // Kamera önüne objeyi konumlandýrmak için boþ bir GameObject
     [SerializeField] private LayerMask pickupLayer;
+    [SerializeField] private GameObject pickupCamera;
     [SerializeField] private LayerMask obstacleLayer;
 
     private GameObject heldObject;
     private Collider heldCollider;
+
 
     void Update()
     {
@@ -27,11 +30,13 @@ public class PlayerPickup : MonoBehaviour
             Vector3 targetPos = pickupParent.position;
             Quaternion targetRot = pickupParent.rotation;
 
-            if (!IsObstructed(targetPos, heldCollider.bounds.extents))
-            {
+            //if (!IsObstructed(targetPos, heldCollider.bounds.extents))
+            //{
                 heldObject.transform.position = targetPos;
                 heldObject.transform.rotation = targetRot;
-            }
+            //}
+            
+
         }
     }
     void TryPickup()
@@ -42,15 +47,17 @@ public class PlayerPickup : MonoBehaviour
             GameObject target = hit.collider.gameObject;
             heldObject = target;
             heldCollider = heldObject.GetComponent<Collider>();
-            heldObject.GetComponent<Rigidbody>().isKinematic = true;
+            heldObject.GetComponent<Rigidbody>().useGravity = false;
             heldObject.transform.SetParent(pickupParent);
+            pickupCamera.SetActive(true);
         }
     }
 
     void Drop()
     {
-        heldObject.GetComponent<Rigidbody>().isKinematic = false;
+        heldObject.GetComponent<Rigidbody>().useGravity = true;
         heldObject.transform.SetParent(null);
+        pickupCamera.SetActive(false);
         heldObject = null;
         heldCollider = null;
     }

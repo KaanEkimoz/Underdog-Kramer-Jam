@@ -134,6 +134,7 @@ namespace Unity.FPS.Gameplay
             ActorsManager actorsManager = FindFirstObjectByType<ActorsManager>();
             if (actorsManager != null)
                 actorsManager.SetPlayer(gameObject);
+
         }
 
         void Start()
@@ -164,6 +165,7 @@ namespace Unity.FPS.Gameplay
             // force the crouch state to false when starting
             SetCrouchingState(false, true);
             UpdateCharacterHeight(true);
+
         }
 
         void Update()
@@ -262,6 +264,7 @@ namespace Unity.FPS.Gameplay
 
         void HandleCharacterMovement()
         {
+
             // horizontal character rotation
             {
                 // rotate the transform with the input speed around its local Y axis
