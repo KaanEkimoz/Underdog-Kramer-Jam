@@ -10,7 +10,7 @@ public class AdvancedPlayerPickup: MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
 
-    private Grabbable _grabbable;
+    private Pickupable _grabbable;
 
     private void Update()
     {
