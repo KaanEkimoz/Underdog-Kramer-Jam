@@ -61,10 +61,10 @@ public class ShelfDetector : MonoBehaviour
             pickupable.transform.position += new Vector3(0, objHalfY, 0);
         }
     }
-    private void SpawnStartPickupable(Pickupable pickupable)
+    public void SpawnStartPickupable(GameObject shelfItem)
     {
         if (shelfItemData != null)
-            Instantiate(shelfItemData.shelfItemPrefab, snapTransform.transform.position, Quaternion.identity);
+            Instantiate(shelfItem, snapTransform.transform.position, Quaternion.identity);
     }
 
 }
