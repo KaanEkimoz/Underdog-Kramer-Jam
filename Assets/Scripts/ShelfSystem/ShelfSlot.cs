@@ -2,7 +2,7 @@ using UnityEngine;
 public class ShelfSlot : MonoBehaviour
 {
     public Item currentItem;
-    public ItemCategories rightCategory;
+    public ShelfItemType rightCategory;
     public float detectionDistance = 2f; 
     public KeyCode placeKey = KeyCode.E;
     public bool isCorrectCategory;
@@ -56,7 +56,7 @@ public class ShelfSlot : MonoBehaviour
         item.transform.position = placePoint.position;
         item.transform.rotation = Quaternion.identity;
         
-        return item.itemData.category == rightCategory;
+        return item.itemData.shelfItemCategory == rightCategory;
     }
 
     public void RemoveItem(Item item)

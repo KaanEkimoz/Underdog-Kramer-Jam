@@ -74,12 +74,12 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7950eeb105be441b024eaffb064021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPosition: {fileID: 5399445974838451398}
+  snapTransform: {fileID: 5399445974838451398}
+  snapGameObject: {fileID: 0}
 --- !u!1 &8706068256227379610
 GameObject:
   m_ObjectHideFlags: 0

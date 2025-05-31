@@ -153,12 +153,6 @@ Transform:
   - {fileID: 1059644914}
   m_Father: {fileID: 2729281213013248445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &142113043 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5399445974838451398, guid: 842afc826677ab7439267e6d1f7a70fa,
-    type: 3}
-  m_PrefabInstance: {fileID: 5119284973291117117}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &218425204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2320371260222401683, guid: 1357d534d67e44349a4b7c67840165c7,
@@ -27168,21 +27162,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6601144572980457632, guid: 842afc826677ab7439267e6d1f7a70fa,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6601144572980457632, guid: 842afc826677ab7439267e6d1f7a70fa,
-        type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697755518369457294, guid: 842afc826677ab7439267e6d1f7a70fa,
-        type: 3}
-      propertyPath: snapTransform
-      value: 
-      objectReference: {fileID: 142113043}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
       propertyPath: m_Name

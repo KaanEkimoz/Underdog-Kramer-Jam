@@ -2,6 +2,7 @@ using UnityEngine;
 public class ShelfDetector : MonoBehaviour
 {
     [SerializeField] private Transform snapTransform;
+    [SerializeField] private GameObject snapGameObject;
     public int HasCorrectPickupable { get; set; }
     public int HasPickupable { get; set; }
 
