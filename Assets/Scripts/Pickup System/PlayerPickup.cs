@@ -8,13 +8,13 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private float maxPickupDistance = 3f;
     [SerializeField] private Transform pickupParent; // Kamera önüne objeyi konumlandýrmak için boþ bir GameObject
     [SerializeField] private LayerMask pickupLayer;
-    [SerializeField] private GameObject pickupCamera;
+    public GameObject pickupCamera;
     [SerializeField] private LayerMask obstacleLayer;
 
     [SerializeField] private float verticalFollowStrength = 0.5f; // Yukarý aþaðý hareket gücü
     private float baseYOffset;
 
-    private GameObject heldObject;
+    public GameObject heldObject;
     private Collider heldCollider;
 
     void Start()
