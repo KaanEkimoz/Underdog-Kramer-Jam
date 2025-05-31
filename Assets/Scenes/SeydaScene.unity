@@ -414,6 +414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItem: {fileID: 0}
   rightCategory: 1
+  detectionDistance: 5
+  placeKey: 101
 --- !u!23 &632985206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -645,8 +647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c624c9d7782b145bb6a1059687498e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlaceDistance: 3
-  pickup: {fileID: 0}
 --- !u!4 &868929744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5035642871227140182, guid: a7566d85b04856b42a956c9b162ee747,
@@ -1097,6 +1097,7 @@ GameObject:
   - component: {fileID: 1300838808}
   - component: {fileID: 1300838807}
   - component: {fileID: 1300838811}
+  - component: {fileID: 1300838812}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -1220,6 +1221,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1300838812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300838806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c989184fba45fa438debee67b8a9fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 5a3a12346d20e084cb5944d0ba455273, type: 2}
 --- !u!4 &1342970745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5963937743390997973, guid: 9b7d8a511d161be4d9c32aae2e937170,
@@ -1536,7 +1550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447834758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -1561,6 +1575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItem: {fileID: 0}
   rightCategory: 3
+  detectionDistance: 2
+  placeKey: 101
 --- !u!65 &1447834762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1973,6 +1989,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItem: {fileID: 0}
   rightCategory: 4
+  detectionDistance: 5
+  placeKey: 101
 --- !u!65 &2140692433
 BoxCollider:
   m_ObjectHideFlags: 0
