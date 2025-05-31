@@ -1,37 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Pickupable : MonoBehaviour
 {
-    private Rigidbody objectRigidbody;
-    private Transform objectGrabPointTransform;
+    public bool IsOnShelf { get; set; }
+    public bool IsOnCorrectShelf { get; set; }
+    public bool IsPickedUp { get; set; }
+
+    private Rigidbody _rb;
 
     private void Awake()
     {
-        objectRigidbody = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
 
-    public void Grab(Transform objectGrabPointTransform)
+    public void PickedUp()
     {
-        this.objectGrabPointTransform = objectGrabPointTransform;
-        objectRigidbody.useGravity = false;
+        _rb.useGravity = false;
     }
 
-    public void Drop()
+    public void Dropped()
     {
-        this.objectGrabPointTransform = null;
-        objectRigidbody.useGravity = true;
+        
     }
-
-    private void FixedUpdate()
+    public void DisablePhysics()
     {
-        if (objectGrabPointTransform != null)
-        {
-            float lerpSpeed = 30f;
-            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
-            //transform.rotation = objectGrabPointTransform.rotation;
-            objectRigidbody.MovePosition(newPosition);
-        }
+        _rb.isKinematic = true;
+    }
+    public void EnablePhysics()
+    {
+        _rb.isKinematic = false;
     }
 }

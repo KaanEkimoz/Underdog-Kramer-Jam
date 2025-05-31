@@ -24,19 +24,18 @@ public class ShelfSlot : MonoBehaviour
     }
     void Update()
     {
-        Ray ray = new Ray(mainCam.transform.position, mainCam.transform.forward);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, detectionDistance, shelfDetectLayerMask ))
         {
             if (hit.collider.gameObject == gameObject) 
             {
                 Debug.DrawRay(ray.origin, ray.direction * detectionDistance, Color.green);
-
-                
                 if (playerPickup.isDropped)
                 {
                     Item item = playerPickup.lastHeldObject.GetComponent<Item>();
                     if (!IsOccupied() && item != null)
                     {
+                        playerPickup.lastHeldObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;    
                         playerPickup.lastHeldObject.GetComponent<Rigidbody>().isKinematic = true;
                         PlaceItem(item);
                      

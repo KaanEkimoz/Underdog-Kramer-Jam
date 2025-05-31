@@ -24,7 +24,7 @@ public class AdvancedPlayerPickup: MonoBehaviour
                 {
                     if (raycastHit.transform.TryGetComponent(out _grabbable))
                     {
-                        _grabbable.Grab(objectGrabPointTransform);
+                        _grabbable.PickUp(objectGrabPointTransform);
                     }
                 }
             }

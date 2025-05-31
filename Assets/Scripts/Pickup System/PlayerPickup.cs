@@ -1,6 +1,5 @@
-using Unity.FPS.Gameplay;
+using System;
 using UnityEngine;
-
 public class PlayerPickup : MonoBehaviour
 {
     [Header("Pick Up Settings")]
@@ -19,6 +18,8 @@ public class PlayerPickup : MonoBehaviour
     private Collider heldCollider;
 
     public bool isDropped = false;
+
+    public Action OnItemDropped;
 
     void Start()
     {
@@ -49,26 +50,26 @@ public class PlayerPickup : MonoBehaviour
             Vector3 targetPos = pickupParent.position;
             Quaternion targetRot = pickupParent.rotation;
 
-            //if (!IsObstructed(targetPos, heldCollider.bounds.extents))
-            //{
             heldObject.transform.position = adjustedPos;
             heldObject.transform.rotation = targetRot;
-            //}
         }
     }
 
     void TryPickup()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.SphereCast(ray, checkSphereRadius, out RaycastHit hit, maxPickupDistance, pickupLayer))
         {
             GameObject target = hit.collider.gameObject;
             heldObject = target;
             heldCollider = heldObject.GetComponent<Collider>();
+            heldObject.GetComponent<Rigidbody>().isKinematic = false;
             heldObject.GetComponent<Rigidbody>().useGravity = false;
             heldObject.transform.SetParent(pickupParent);
             pickupCamera.SetActive(true);
+            Debug.Log("Pick Upped");
         }
+        Debug.Log("Ray Failed");
     }
 
     void Drop()
@@ -96,8 +97,6 @@ public class PlayerPickup : MonoBehaviour
                     break;
                 }
             }
-
-            // Hiç boþ yer bulunamazsa en son çemberin orta noktasýna koy
             if (!foundSafe)
             {
                 Vector3 fallbackPos = dropPosition - transform.forward * 1.0f;
