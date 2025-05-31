@@ -15,6 +15,8 @@ public class TVController : MonoBehaviour
     [SerializeField]private float timer;
     private bool isOpen = false;
 
+    public Transform tvFrontPoint;
+
     private void Start()
     {
         timer = tvOpenDuration;
@@ -47,11 +49,13 @@ public class TVController : MonoBehaviour
 
     public void OpenTV()
     {
+        if (isOpen) return;
         tvAudio.Play();
         Material[] tvMaterials = tvRenderer.materials;
         tvMaterials[materialIndex] = openMaterial;
         tvRenderer.materials = tvMaterials;
         Debug.Log("tv acik");
+        timer = tvOpenDuration;
         isOpen = true;
     }
 
