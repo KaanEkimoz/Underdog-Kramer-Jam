@@ -52,7 +52,7 @@ public class PlayerPickup : MonoBehaviour
             //if (!IsObstructed(targetPos, heldCollider.bounds.extents))
             //{
             heldObject.transform.position = adjustedPos;
-            heldObject.transform.rotation = targetRot;
+            //heldObject.transform.rotation = targetRot;
             //}
         }
     }
