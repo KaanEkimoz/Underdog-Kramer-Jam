@@ -35,7 +35,7 @@ public class Pickupable : MonoBehaviour
         
         _currentShelf = currentShelf;
 
-        if (currentShelf.shelfItemType == shelfItemData.shelfItemType)
+        if (currentShelf.shelfItemData.shelfItemType == shelfItemData.shelfItemType)
         {
             currentShelf.HasCorrectPickupable = true;
             IsOnCorrectShelf = true;
