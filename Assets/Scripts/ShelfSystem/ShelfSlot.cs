@@ -8,18 +8,16 @@ public class ShelfSlot : MonoBehaviour
     public bool isCorrectCategory;
     [SerializeField] private Transform placePoint;
 
-    private Camera mainCam;
     private PlayerPickup playerPickup;
     [SerializeField] private LayerMask shelfDetectLayerMask;
 
     void Start()
     {
-        mainCam = Camera.main;
         playerPickup = FindObjectOfType<PlayerPickup>();
     }
     private void OnDrawGizmos()
     {
-        Ray ray = new Ray(mainCam.transform.position, mainCam.transform.forward * detectionDistance);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward * detectionDistance);
         Gizmos.DrawRay(ray);
     }
     void Update()

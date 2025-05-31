@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AdvancedPlayerPickup: MonoBehaviour
 {
-
-
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
@@ -24,14 +22,14 @@ public class AdvancedPlayerPickup: MonoBehaviour
                 {
                     if (raycastHit.transform.TryGetComponent(out _grabbable))
                     {
-                        _grabbable.PickUp(objectGrabPointTransform);
+                        //_grabbable.PickUp(objectGrabPointTransform);
                     }
                 }
             }
             else
             {
                 // Currently carrying something, drop
-                _grabbable.Drop();
+                //_grabbable.Drop();
                 _grabbable = null;
             }
         }

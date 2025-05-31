@@ -6,20 +6,32 @@ public class Pickupable : MonoBehaviour
     public bool IsPickedUp { get; set; }
 
     private Rigidbody _rb;
+    private ShelfDetector _currentShelf;
 
-    private void Awake()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        IsPickedUp = false;
     }
 
     public void PickedUp()
     {
         _rb.useGravity = false;
+        IsPickedUp = true;
+        IsOnShelf = false;
+        IsOnCorrectShelf = false;
+        _currentShelf.RemoveFromShelf(this);
+        _currentShelf = null;
     }
-
+    public void PlacedToShelf(ShelfDetector currentShelf)
+    {
+        IsPickedUp = false;
+        IsOnShelf = true;
+        _currentShelf = currentShelf;
+    }
     public void Dropped()
     {
-        
+        IsPickedUp = false;
     }
     public void DisablePhysics()
     {
