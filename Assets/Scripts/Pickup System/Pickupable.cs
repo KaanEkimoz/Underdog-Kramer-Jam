@@ -1,6 +1,7 @@
 using UnityEngine;
 public class Pickupable : MonoBehaviour
 {
+    public ShelfItemData shelfItemData;
     public bool IsOnShelf { get; set; }
     public bool IsOnCorrectShelf { get; set; }
     public bool IsPickedUp { get; set; }
@@ -20,14 +21,26 @@ public class Pickupable : MonoBehaviour
         IsPickedUp = true;
         IsOnShelf = false;
         IsOnCorrectShelf = false;
-        _currentShelf.RemoveFromShelf(this);
-        _currentShelf = null;
+
+        if (_currentShelf != null)
+        {
+            _currentShelf.RemoveFromShelf(this);
+            _currentShelf = null;
+        }
     }
     public void PlacedToShelf(ShelfDetector currentShelf)
     {
         IsPickedUp = false;
         IsOnShelf = true;
+        
         _currentShelf = currentShelf;
+
+        if (currentShelf.shelfItemType == shelfItemData.shelfItemType)
+        {
+            currentShelf.HasCorrectPickupable = true;
+            IsOnCorrectShelf = true;
+            Debug.Log(gameObject.name + " placed to CORRECT shelf.");
+        }
     }
     public void Dropped()
     {

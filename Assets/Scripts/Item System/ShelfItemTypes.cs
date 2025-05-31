@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public enum ShelfItemType
+public enum ShelfItemTypes
 {
     Apple,
     Pear,
@@ -48,5 +46,4 @@ public enum ShelfItemType
     Biscuit,
     Cracker,
     Cake
-
 }

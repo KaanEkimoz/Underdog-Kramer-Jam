@@ -35,7 +35,7 @@ public class PlayerItemPlacer : MonoBehaviour
                 }
 
                 GameObject heldObj = pickup.heldObject;
-                Item item = heldObj.GetComponent<Item>();
+                ShelfItem item = heldObj.GetComponent<ShelfItem>();
 
                 bool correctCategory = slot.PlaceItem(item);
 

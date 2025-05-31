@@ -1210,7 +1210,6 @@ GameObject:
   - component: {fileID: 1300838807}
   - component: {fileID: 1300838811}
   - component: {fileID: 1300838813}
-  - component: {fileID: 1300838812}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -1335,19 +1334,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1300838812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300838806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c989184fba45fa438debee67b8a9fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 5a3a12346d20e084cb5944d0ba455273, type: 2}
 --- !u!114 &1300838813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shelfItemData: {fileID: 11400000, guid: 40bad5765230b3d4682f163fafe95800, type: 2}
 --- !u!4 &1342970745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5963937743390997973, guid: 9b7d8a511d161be4d9c32aae2e937170,

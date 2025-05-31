@@ -1,8 +1,8 @@
 using UnityEngine;
 public class ShelfSlot : MonoBehaviour
 {
-    public Item currentItem;
-    public ShelfItemType rightCategory;
+    public ShelfItem currentItem;
+    public ShelfItemTypes rightCategory;
     public float detectionDistance = 2f; 
     public KeyCode placeKey = KeyCode.E;
     public bool isCorrectCategory;
@@ -30,7 +30,7 @@ public class ShelfSlot : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction * detectionDistance, Color.green);
                 if (playerPickup.isDropped)
                 {
-                    Item item = playerPickup.lastHeldObject.GetComponent<Item>();
+                    ShelfItem item = playerPickup.lastHeldObject.GetComponent<ShelfItem>();
                     if (!IsOccupied() && item != null)
                     {
                         playerPickup.lastHeldObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;    
@@ -50,16 +50,16 @@ public class ShelfSlot : MonoBehaviour
         }
     }
 
-    public bool PlaceItem(Item item)
+    public bool PlaceItem(ShelfItem item)
     {
         currentItem = item;
         item.transform.position = placePoint.position;
         item.transform.rotation = Quaternion.identity;
         
-        return item.itemData.shelfItemCategory == rightCategory;
+        return item.itemData.shelfItemType == rightCategory;
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveItem(ShelfItem item)
     {
         currentItem = null;
     }
