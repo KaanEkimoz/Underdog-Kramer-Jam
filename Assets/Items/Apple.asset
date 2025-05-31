@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
-  m_Name: NewItem
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  itemName: "mkdf\u015Fds\u015F"
-  category: 0
-  itemPrefab: {fileID: 0}
+  shelfItemType: 0
+  shelfItemPrefab: {fileID: 4424251196993166207, guid: bef5217c23f9c7d4095ff369778aa5cd,
+    type: 3}

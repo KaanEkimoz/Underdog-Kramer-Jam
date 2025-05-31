@@ -1,37 +1,58 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Pickupable : MonoBehaviour
 {
-    private Rigidbody objectRigidbody;
-    private Transform objectGrabPointTransform;
+    public ShelfItemData shelfItemData;
+    public bool IsOnShelf { get; set; }
+    public bool IsOnCorrectShelf { get; set; }
+    public bool IsPickedUp { get; set; }
+
+    private Rigidbody _rb;
+    private ShelfDetector _currentShelf;
 
     private void Awake()
     {
-        objectRigidbody = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
+        IsPickedUp = false;
     }
 
-    public void Grab(Transform objectGrabPointTransform)
+    public void PickedUp()
     {
-        this.objectGrabPointTransform = objectGrabPointTransform;
-        objectRigidbody.useGravity = false;
-    }
+        _rb.useGravity = false;
+        IsPickedUp = true;
+        IsOnShelf = false;
+        IsOnCorrectShelf = false;
 
-    public void Drop()
-    {
-        this.objectGrabPointTransform = null;
-        objectRigidbody.useGravity = true;
-    }
-
-    private void FixedUpdate()
-    {
-        if (objectGrabPointTransform != null)
+        if (_currentShelf != null)
         {
-            float lerpSpeed = 30f;
-            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
-            //transform.rotation = objectGrabPointTransform.rotation;
-            objectRigidbody.MovePosition(newPosition);
+            _currentShelf.RemoveFromShelf(this);
+            _currentShelf = null;
         }
+    }
+    public void PlacedToShelf(ShelfDetector currentShelf)
+    {
+        IsPickedUp = false;
+        IsOnShelf = true;
+        
+        _currentShelf = currentShelf;
+
+        if (currentShelf.shelfItemData.shelfItemType == shelfItemData.shelfItemType)
+        {
+            currentShelf.HasCorrectPickupable = true;
+            currentShelf.HasPickupable = true;
+            IsOnCorrectShelf = true;
+            Debug.Log(gameObject.name + " placed to CORRECT shelf.");
+        }
+    }
+    public void Dropped()
+    {
+        IsPickedUp = false;
+    }
+    public void DisablePhysics()
+    {
+        _rb.isKinematic = true;
+    }
+    public void EnablePhysics()
+    {
+        _rb.isKinematic = false;
     }
 }
