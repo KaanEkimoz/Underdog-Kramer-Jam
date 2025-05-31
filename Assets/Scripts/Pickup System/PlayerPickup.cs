@@ -15,7 +15,10 @@ public class PlayerPickup : MonoBehaviour
     private float baseYOffset;
 
     public GameObject heldObject;
+    public GameObject lastHeldObject;
     private Collider heldCollider;
+
+    public bool isDropped = false;
 
     void Start()
     {
@@ -73,6 +76,7 @@ public class PlayerPickup : MonoBehaviour
         Vector3 dropPosition = heldObject.transform.position;
         Vector3 extents = heldCollider.bounds.extents;
 
+       
         if (IsObstructed(dropPosition, extents))
         {
             float checkRadius = 1.0f;
@@ -99,7 +103,10 @@ public class PlayerPickup : MonoBehaviour
                 Vector3 fallbackPos = dropPosition - transform.forward * 1.0f;
                 heldObject.transform.position = fallbackPos;
             }
+            
         }
+
+        lastHeldObject = heldObject;
 
         Rigidbody rb = heldObject.GetComponent<Rigidbody>();
         rb.useGravity = true;
@@ -107,6 +114,7 @@ public class PlayerPickup : MonoBehaviour
         pickupCamera.SetActive(false);
         heldObject = null;
         heldCollider = null;
+        isDropped = true;
     }
 
     bool IsObstructed(Vector3 targetPos, Vector3 extents)

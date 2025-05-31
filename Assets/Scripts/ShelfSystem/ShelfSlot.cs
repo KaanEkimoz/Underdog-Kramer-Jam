@@ -1,14 +1,16 @@
 using UnityEngine;
-
 public class ShelfSlot : MonoBehaviour
 {
     public Item currentItem;
     public ItemCategories rightCategory;
     public float detectionDistance = 2f; 
     public KeyCode placeKey = KeyCode.E;
+    public bool isCorrectCategory;
+    [SerializeField] private Transform placePoint;
 
     private Camera mainCam;
     private PlayerPickup playerPickup;
+    [SerializeField] private LayerMask shelfDetectLayerMask;
 
     void Start()
     {
@@ -23,22 +25,20 @@ public class ShelfSlot : MonoBehaviour
     void Update()
     {
         Ray ray = new Ray(mainCam.transform.position, mainCam.transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, detectionDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, detectionDistance, shelfDetectLayerMask ))
         {
             if (hit.collider.gameObject == gameObject) 
             {
                 Debug.DrawRay(ray.origin, ray.direction * detectionDistance, Color.green);
 
                 
-                if (playerPickup.heldObject != null && Input.GetMouseButton(0))
+                if (playerPickup.isDropped)
                 {
-                    Item item = playerPickup.heldObject.GetComponent<Item>();
+                    Item item = playerPickup.lastHeldObject.GetComponent<Item>();
                     if (!IsOccupied() && item != null)
-                    {                       
-                        playerPickup.heldObject.GetComponent<Rigidbody>().useGravity = true;
-                        playerPickup.heldObject.transform.SetParent(null);
-                        playerPickup.pickupCamera.SetActive(false);
-                        playerPickup.heldObject = null;
+                    {
+                        playerPickup.lastHeldObject.GetComponent<Rigidbody>().isKinematic = true;
+                        PlaceItem(item);
                      
                         bool correctCategory = PlaceItem(item);
                         Debug.Log(correctCategory ? "Doðru kategoriye yerleþtirildi." : "YANLIÞ kategori!");
@@ -47,6 +47,7 @@ public class ShelfSlot : MonoBehaviour
                     {
                         Debug.Log("Slot dolu veya geçersiz eþya.");
                     }
+                    playerPickup.isDropped = false;
                 }
             }
         }
@@ -55,7 +56,7 @@ public class ShelfSlot : MonoBehaviour
     public bool PlaceItem(Item item)
     {
         currentItem = item;
-        item.transform.position = transform.position;
+        item.transform.position = placePoint.position;
         item.transform.rotation = Quaternion.identity;
         
         return item.itemData.category == rightCategory;
