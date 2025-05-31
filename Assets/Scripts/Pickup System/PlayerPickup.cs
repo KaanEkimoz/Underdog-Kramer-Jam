@@ -1,6 +1,5 @@
-using Unity.FPS.Gameplay;
+using System;
 using UnityEngine;
-
 public class PlayerPickup : MonoBehaviour
 {
     [Header("Pick Up Settings")]
@@ -20,6 +19,8 @@ public class PlayerPickup : MonoBehaviour
 
     public bool isDropped = false;
 
+    public Action OnItemDropped;
+
     void Start()
     {
         baseYOffset = pickupParent.localPosition.y;
@@ -35,12 +36,10 @@ public class PlayerPickup : MonoBehaviour
                 Drop();
         }
 
-        // DÜZELTÝLEN KISIM BURASI
         float camX = Camera.main.transform.eulerAngles.x;
-        float verticalOffset = camX > 180 ? camX - 360 : camX; // Artýk -90 ile +90 arasý
-        verticalOffset = Mathf.Clamp(verticalOffset, -60, 60); // Açý sýnýrý
+        float verticalOffset = camX > 180 ? camX - 360 : camX;
+        verticalOffset = Mathf.Clamp(verticalOffset, -60, 60); 
         float offsetY = baseYOffset + (verticalOffset / 60f) * verticalFollowStrength;
-        // SON
 
         Vector3 adjustedPos = pickupParent.parent.TransformPoint(new Vector3(0, offsetY, pickupParent.localPosition.z));
 
@@ -49,28 +48,26 @@ public class PlayerPickup : MonoBehaviour
             Vector3 targetPos = pickupParent.position;
             Quaternion targetRot = pickupParent.rotation;
 
-            //if (!IsObstructed(targetPos, heldCollider.bounds.extents))
-            //{
             heldObject.transform.position = adjustedPos;
-            //heldObject.transform.rotation = targetRot;
-            //}
+            heldObject.transform.rotation = targetRot;
         }
     }
 
     void TryPickup()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.SphereCast(ray, checkSphereRadius, out RaycastHit hit, maxPickupDistance, pickupLayer))
         {
-            GameObject target = hit.collider.gameObject;
-            heldObject = target;
+            heldObject = hit.collider.gameObject;
             heldCollider = heldObject.GetComponent<Collider>();
+            heldObject.GetComponent<Rigidbody>().isKinematic = false;
             heldObject.GetComponent<Rigidbody>().useGravity = false;
             heldObject.transform.SetParent(pickupParent);
             pickupCamera.SetActive(true);
+            heldObject.GetComponent<Pickupable>().PickedUp();
+            Debug.Log("Pick Upped");
         }
     }
-
     void Drop()
     {
         Vector3 dropPosition = heldObject.transform.position;
@@ -96,8 +93,6 @@ public class PlayerPickup : MonoBehaviour
                     break;
                 }
             }
-
-            // Hiç boþ yer bulunamazsa en son çemberin orta noktasýna koy
             if (!foundSafe)
             {
                 Vector3 fallbackPos = dropPosition - transform.forward * 1.0f;
@@ -106,15 +101,13 @@ public class PlayerPickup : MonoBehaviour
             
         }
 
-        lastHeldObject = heldObject;
-
         Rigidbody rb = heldObject.GetComponent<Rigidbody>();
         rb.useGravity = true;
         heldObject.transform.SetParent(null);
+        heldObject.GetComponent<Pickupable>().Dropped();
         pickupCamera.SetActive(false);
         heldObject = null;
         heldCollider = null;
-        isDropped = true;
     }
 
     bool IsObstructed(Vector3 targetPos, Vector3 extents)
