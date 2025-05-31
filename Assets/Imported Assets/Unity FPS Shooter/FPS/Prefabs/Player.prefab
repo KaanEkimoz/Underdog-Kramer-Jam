@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 806887368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4354021110288562838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DefaultWeaponPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3625601170703586302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3809839388784154446}
   - component: {fileID: 2286125971047457827}
   - component: {fileID: 7992205179725001866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PickupCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1403933375132323333}
   - component: {fileID: 6820428171280673988}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShadowProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3548304480070938814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PickupPosition
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3361326784658045617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirstPersonSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3659112947323767536}
   - component: {fileID: 6296378538850758914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PickupCollision
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6033319682454824337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AimingWeaponPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3891163784698469781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponParentSocket
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -474,7 +474,8 @@ GameObject:
   - component: {fileID: 1272397862697293493}
   - component: {fileID: 1661717823}
   - component: {fileID: 8529972560728359104}
-  m_Layer: 0
+  - component: {fileID: 7294613863797691030}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -652,6 +653,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   verticalFollowStrength: 0.5
+  heldObject: {fileID: 0}
 --- !u!82 &1272397862697293493
 AudioSource:
   m_ObjectHideFlags: 0
@@ -861,6 +863,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: c0527fef-5943-4d3d-9473-fc71f07f577f
+--- !u!114 &7294613863797691030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253983127304857660}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4145b59f2937a1641ae0c875dc3cf14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCameraTransform: {fileID: 8694137560673455815}
+  objectGrabPointTransform: {fileID: 3548304480070938814}
+  pickUpLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &7383874627095517793
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050759424792167117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DownWeaponPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +924,7 @@ GameObject:
   - component: {fileID: 306504594}
   - component: {fileID: 2758827746426004724}
   - component: {fileID: 7316344013651781548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1123,6 +1142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_JetpackTrail_right
       objectReference: {fileID: 0}
+    - target: {fileID: 8929146388027618498, guid: 7468cd18030a0204ab08baf7ac36ff1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1205,6 +1229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX_JetpackTrail_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929146388027618498, guid: 7468cd18030a0204ab08baf7ac36ff1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
