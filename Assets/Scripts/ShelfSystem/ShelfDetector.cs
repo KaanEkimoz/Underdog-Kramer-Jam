@@ -9,24 +9,29 @@ public class ShelfDetector : MonoBehaviour
 
     private Pickupable currentPickupable;
     private Pickupable removedPickuapble;
+
+    private void Start()
+    {
+    }
     private void OnTriggerStay(Collider other)
     {
-        if(other.TryGetComponent<Pickupable>(out currentPickupable) && !currentPickupable.IsPickedUp && !currentPickupable.IsOnShelf)
-        {
+        if(!HasPickupable && other.TryGetComponent<Pickupable>(out currentPickupable) && !currentPickupable.IsPickedUp && !currentPickupable.IsOnShelf)
             PlaceToShelf(currentPickupable);
-        }
     }
     private void PlaceToShelf(Pickupable pickupable)
     {
         pickupable.PlacedToShelf(this);
         pickupable.DisablePhysics();
-        
+
+        HasPickupable = true;
         SnapPickupableToSurface(pickupable.gameObject, snapTransform);
         Debug.Log(pickupable.name + " placed to shelf.");
     }
     public void RemoveFromShelf(Pickupable pickupable)
     {
         currentPickupable = null;
+        HasPickupable = false;
+        HasCorrectPickupable = false;
         Debug.Log(pickupable.name + " removed from shelf.");
     }
     private void SnapPickupableToSurface(GameObject pickupable, Transform snapTransform)
@@ -55,6 +60,11 @@ public class ShelfDetector : MonoBehaviour
             pickupable.transform.position = snapTransform.position;
             pickupable.transform.position += new Vector3(0, objHalfY, 0);
         }
+    }
+    private void SpawnStartPickupable(Pickupable pickupable)
+    {
+        if (shelfItemData != null)
+            Instantiate(shelfItemData.shelfItemPrefab, snapTransform.transform.position, Quaternion.identity);
     }
 
 }

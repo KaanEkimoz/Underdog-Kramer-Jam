@@ -9,7 +9,7 @@ public class Pickupable : MonoBehaviour
     private Rigidbody _rb;
     private ShelfDetector _currentShelf;
 
-    private void Start()
+    private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         IsPickedUp = false;
@@ -38,6 +38,7 @@ public class Pickupable : MonoBehaviour
         if (currentShelf.shelfItemData.shelfItemType == shelfItemData.shelfItemType)
         {
             currentShelf.HasCorrectPickupable = true;
+            currentShelf.HasPickupable = true;
             IsOnCorrectShelf = true;
             Debug.Log(gameObject.name + " placed to CORRECT shelf.");
         }
