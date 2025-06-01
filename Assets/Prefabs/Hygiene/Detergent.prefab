@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1149924796843344183}
   - component: {fileID: -7693464814085997550}
   - component: {fileID: -6576947320592176243}
+  - component: {fileID: 3283609556874074071}
   m_Layer: 6
   m_Name: Detergent
   m_TagString: Untagged
@@ -138,3 +139,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.098649986, y: 0.33944273, z: 0.1797851}
   m_Center: {x: 0.042485345, y: 0.026220448, z: -0.01494832}
+--- !u!114 &3283609556874074071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928929893028306786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shelfItemData: {fileID: 11400000, guid: 55e64368c7b796c4a8a01439198c4dd3, type: 2}
