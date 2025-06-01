@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Effects")]
+    public GameObject happyParticles;
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 3.5f;
 
@@ -27,12 +30,14 @@ public class EnemyController : MonoBehaviour
     private Transform announcementTarget;
     private int currentWaypointIndex = 0;
     private int waypointDirection = 1;
+    private bool isWatchingTV = false;
 
     private enum State { Patrol, MoveToTV, WaitAtTV, MoveToAnnouncement }
     private State currentState = State.Patrol;
 
     private void Awake()
     {
+        happyParticles.SetActive(false);
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
     }
@@ -78,6 +83,8 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case State.WaitAtTV:
+                isWatchingTV = true;
+                happyParticles.SetActive(true);
                 FaceTarget(tvController.transform);
                 break;
 
@@ -88,6 +95,11 @@ public class EnemyController : MonoBehaviour
                     GoToNextWaypoint();
                 }
                 break;
+        }
+
+        if (currentState != State.WaitAtTV && happyParticles.activeSelf)
+        {
+            happyParticles.SetActive(false);
         }
     }
 
