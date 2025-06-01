@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Laptop
   m_EditorClassIdentifier: 
-  shelfItemType: 22
+  shelfItemType: 15
   shelfItemPrefab: {fileID: 176773780151348357, guid: 2671e57bcf5b9b54687dc5a01a8f59ac,
     type: 3}

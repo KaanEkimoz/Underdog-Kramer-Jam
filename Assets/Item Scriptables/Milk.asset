@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Milk
   m_EditorClassIdentifier: 
-  shelfItemType: 0
-  shelfItemPrefab: {fileID: 2595340859710832507, guid: 3dd5f639d04c01243b55ac938ea7cb13,
+  shelfItemType: 11
+  shelfItemPrefab: {fileID: 7830109947793443861, guid: 98e61de536d355c48bb0dc0c460616c6,
     type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 619386604669706008}
   - component: {fileID: 193146244564067586}
   - component: {fileID: 4369509655886386354}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Laptop Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,8 +98,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 803222174191341917}
-  m_Layer: 0
-  m_Name: TVs
+  m_Layer: 12
+  m_Name: Laptops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3596,6 +3596,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 113325324}
+  - {fileID: 2740290952555246902}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2146597047
@@ -3811,6 +3812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: mutlu_particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991350182980014391, guid: 751f04882bbb29f4b950ec179907e410,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28670,6 +28676,12 @@ PrefabInstance:
       addedObject: {fileID: 1744072645}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77efea102031f0e49927fcdd8bb252cc, type: 3}
+--- !u!4 &2740290952555246902 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+    type: 3}
+  m_PrefabInstance: {fileID: 7658743911751464569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2881383026772759684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5430997712797591285, guid: ee28bb860fec78e4d956bef9a6f0cba0,
@@ -29521,6 +29533,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee28bb860fec78e4d956bef9a6f0cba0, type: 3}
+--- !u!1001 &7658743911751464569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2146597046}
+    m_Modifications:
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.709
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441366704185606702, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831576909484189798, guid: cd3241c7e696e6644bd01fb8af275e67,
+        type: 3}
+      propertyPath: m_Name
+      value: stun_particle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd3241c7e696e6644bd01fb8af275e67, type: 3}
 --- !u!1 &8176874083622282009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3402466590440534666, guid: 649464bf0032986498b2d46481234524,

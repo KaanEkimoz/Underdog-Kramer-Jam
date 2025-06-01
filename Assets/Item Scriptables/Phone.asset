@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Phone
   m_EditorClassIdentifier: 
-  shelfItemType: 25
+  shelfItemType: 18
   shelfItemPrefab: {fileID: 4137241292698840708, guid: 760f35db76a6e914eaecc1e222da5b46,
     type: 3}
