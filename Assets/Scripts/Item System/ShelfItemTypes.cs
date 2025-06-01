@@ -19,6 +19,7 @@ public enum ShelfItemTypes
     Fanta,
     Juice,
     Ayran,
+    Milk,
     MineralWater,
 
     Fish,
@@ -34,7 +35,6 @@ public enum ShelfItemTypes
     Television,
 
     Egg,
-    Milk,
     Honey,
     Jam,
     CannedCorn,

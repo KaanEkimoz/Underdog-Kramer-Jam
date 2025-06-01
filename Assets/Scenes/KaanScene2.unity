@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shelves: []
-  swapChance: 0.15
+  swapChance: 0.05
 --- !u!4 &841244080
 Transform:
   m_ObjectHideFlags: 0
