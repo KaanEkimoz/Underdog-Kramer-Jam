@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5461667392414802338}
   - component: {fileID: -5415692149948914233}
   - component: {fileID: 973906531961741245}
+  - component: {fileID: 5113617632226896874}
   m_Layer: 6
   m_Name: Meat
   m_TagString: Untagged
@@ -138,3 +139,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5113617632226896874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372986166098385384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shelfItemData: {fileID: 11400000, guid: aa6f1b4a5fa82144c8f55d79173e30d0, type: 2}

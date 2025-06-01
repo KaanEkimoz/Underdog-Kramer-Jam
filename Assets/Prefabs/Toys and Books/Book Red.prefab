@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2182213673954716921}
   - component: {fileID: -8449310419630707672}
   - component: {fileID: 5354468705687452172}
+  - component: {fileID: -1796116238647101914}
   m_Layer: 6
   m_Name: Book Red
   m_TagString: Untagged
@@ -138,3 +139,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1796116238647101914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083062048102674809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shelfItemData: {fileID: 11400000, guid: 7ad4a763b3e6ea342af4994bff2b96c1, type: 2}
