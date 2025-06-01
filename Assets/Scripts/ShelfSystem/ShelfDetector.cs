@@ -10,7 +10,6 @@ public class ShelfDetector : MonoBehaviour
     private Pickupable currentPickupable;
     private Pickupable removedPickuapble;
 
-
     //Highlight
     [SerializeField] private Renderer shelfRenderer;
     [SerializeField] private Color highlightColor = Color.green;
@@ -36,6 +35,10 @@ public class ShelfDetector : MonoBehaviour
             }
         }
             
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        HighlightShelf(false);
     }
     private void HighlightShelf(bool shouldHighlight)
     {
