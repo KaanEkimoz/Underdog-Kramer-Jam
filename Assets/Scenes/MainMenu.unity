@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 444093663}
   - component: {fileID: 444093662}
   - component: {fileID: 444093661}
+  - component: {fileID: 444093664}
   m_Layer: 5
   m_Name: tutorialbutton
   m_TagString: Untagged
@@ -480,6 +481,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444093659}
   m_CullTransparentMesh: 1
+--- !u!114 &444093664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444093659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetMultiplier: -30
+  smoothTime: 0.1
 --- !u!1 &445527877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetMultiplier: -5
+  offsetMultiplier: -30
   smoothTime: 0.5
 --- !u!114 &805964975
 MonoBehaviour:
@@ -1327,7 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetMultiplier: -10
+  offsetMultiplier: -40
   smoothTime: 0.5
 --- !u!114 &824865753
 MonoBehaviour:
@@ -1825,7 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetMultiplier: -15
+  offsetMultiplier: -50
   smoothTime: 0.5
 --- !u!114 &979810990
 MonoBehaviour:
@@ -2463,6 +2478,7 @@ GameObject:
   - component: {fileID: 1519121843}
   - component: {fileID: 1519121842}
   - component: {fileID: 1519121841}
+  - component: {fileID: 1519121844}
   m_Layer: 5
   m_Name: "\xE7\u0131k\u0131\u015F"
   m_TagString: Untagged
@@ -2584,6 +2600,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519121839}
   m_CullTransparentMesh: 1
+--- !u!114 &1519121844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519121839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetMultiplier: -30
+  smoothTime: 0.1
 --- !u!1 &1592638011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2761,7 @@ GameObject:
   - component: {fileID: 1830390438}
   - component: {fileID: 1830390441}
   - component: {fileID: 1830390440}
+  - component: {fileID: 1830390442}
   - component: {fileID: 1830390439}
   m_Layer: 5
   m_Name: credbutton
@@ -2853,6 +2884,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830390437}
   m_CullTransparentMesh: 1
+--- !u!114 &1830390442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830390437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetMultiplier: -30
+  smoothTime: 0.1
 --- !u!1 &2033257814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,6 +2910,7 @@ GameObject:
   - component: {fileID: 2033257818}
   - component: {fileID: 2033257817}
   - component: {fileID: 2033257816}
+  - component: {fileID: 2033257819}
   m_Layer: 5
   m_Name: playbutton
   m_TagString: Untagged
@@ -2986,6 +3032,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033257814}
   m_CullTransparentMesh: 1
+--- !u!114 &2033257819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033257814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetMultiplier: -30
+  smoothTime: 0.1
 --- !u!1 &2117951668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,8 +3074,8 @@ RectTransform:
   m_GameObject: {fileID: 2117951668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.34, y: 1.34, z: 1.34}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 506625204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3036,7 +3096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9ddfb4dea275144be04a24dee952e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetMultiplier: -20
+  offsetMultiplier: -60
   smoothTime: 0.5
 --- !u!114 &2117951671
 MonoBehaviour:
