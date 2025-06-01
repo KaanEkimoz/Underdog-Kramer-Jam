@@ -1,6 +1,13 @@
+using com.absence.soundsystem;
+using com.absence.soundsystem.internals;
 using UnityEngine;
+
 public class Pickupable : MonoBehaviour
 {
+    //public const float COLLISION_MAGNITUDE_COEFFICIENT = 0.06f;
+
+    [SerializeField] private SoundAsset m_soundAsset;
+
     public ShelfItemData shelfItemData;
     public bool IsOnShelf { get; set; }
     public bool IsOnCorrectShelf { get; set; }
@@ -54,5 +61,16 @@ public class Pickupable : MonoBehaviour
     public void EnablePhysics()
     {
         _rb.isKinematic = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_rb.isKinematic)
+            return;
+
+        if (m_soundAsset == null)
+            return;
+
+        Sound.Create(m_soundAsset).AtPosition(collision.GetContact(0).point).Play();
     }
 }
