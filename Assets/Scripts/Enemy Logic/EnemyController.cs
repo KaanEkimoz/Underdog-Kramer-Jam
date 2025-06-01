@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField] private float moveSpeed = 2f;
+    [Header("Effects")]
+    public GameObject happyParticles;
 
-    [Header("Rotation")]
-    [SerializeField] private float rotationSpeed = 5f;
-    [SerializeField] private float rotationCompleteThreshold = 5f;
+    [Header("Movement")]
+    [SerializeField] private float moveSpeed = 3.5f;
 
     [Header("Patrol Waypoints")]
     [SerializeField] private Transform[] waypoints;
-    [SerializeField] private float waypointArriveThreshold = 0.1f;
     [SerializeField, Range(0f, 1f)] private float moveReverseWaypointChance = 0.05f;
 
     [Header("TV Interaction")]
@@ -27,29 +26,45 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Vector3 boxHalfExtents = new Vector3(1.5f, 1f, 3f);
     [SerializeField] private Vector3 boxOffset = new Vector3(0f, 0f, 2f);
 
+    private NavMeshAgent agent;
     private Transform announcementTarget;
     private int currentWaypointIndex = 0;
     private int waypointDirection = 1;
+    private bool isWatchingTV = false;
 
     private enum State { Patrol, MoveToTV, WaitAtTV, MoveToAnnouncement }
     private State currentState = State.Patrol;
 
+    private void Awake()
+    {
+        happyParticles.SetActive(false);
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = moveSpeed;
+    }
+
     private void Update()
     {
+        // --- Durum geçişleri ---
         if (currentState == State.Patrol && tvController != null && tvController.IsOpen())
         {
             currentState = State.MoveToTV;
+            agent.SetDestination(tvController.tvFrontPoint.position);
         }
 
         if (currentState == State.WaitAtTV && tvController != null && !tvController.IsOpen())
         {
             currentState = State.Patrol;
+            GoToNextWaypoint();
         }
 
+        // --- Durum işlemleri ---
         switch (currentState)
         {
             case State.Patrol:
-                HandlePatrol();
+                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    GoToNextWaypoint();
+                }
 
                 detectionTimer -= Time.deltaTime;
                 if (detectionTimer <= 0f)
@@ -60,99 +75,65 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case State.MoveToTV:
-                if (tvController != null)
+                if (!agent.pathPending && agent.remainingDistance <= tvStopDistance)
                 {
-                    MoveTowards(
-                        tvController.tvFrontPoint,
-                        waypointArriveThreshold,
-                        onArrive: () => { currentState = State.WaitAtTV; }
-                    );
+                    currentState = State.WaitAtTV;
+                    agent.ResetPath();
                 }
                 break;
 
             case State.WaitAtTV:
-                FaceIngredient(tvController.transform);
+                isWatchingTV = true;
+                happyParticles.SetActive(true);
+                FaceTarget(tvController.transform);
                 break;
 
             case State.MoveToAnnouncement:
-                if (announcementTarget != null)
+                if (announcementTarget != null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    MoveTowards(
-                        announcementTarget,
-                        waypointArriveThreshold,
-                        onArrive: () => { currentState = State.Patrol; }
-                    );
+                    currentState = State.Patrol;
+                    GoToNextWaypoint();
                 }
                 break;
         }
-    }
 
-    private void HandlePatrol()
-    {
-        if (waypoints == null || waypoints.Length < 2) return;
-
-        Transform targetWp = waypoints[currentWaypointIndex];
-        MoveTowards(
-            targetWp,
-            waypointArriveThreshold,
-            onArrive: () =>
-            {
-                if (Random.value < moveReverseWaypointChance)
-                    waypointDirection *= -1;
-
-                currentWaypointIndex += waypointDirection;
-
-                if (currentWaypointIndex >= waypoints.Length)
-                {
-                    currentWaypointIndex = waypoints.Length - 2;
-                    waypointDirection = -1;
-                }
-                else if (currentWaypointIndex < 0)
-                {
-                    currentWaypointIndex = 1;
-                    waypointDirection = 1;
-                }
-            }
-        );
-    }
-
-    private void MoveTowards(Transform target, float arriveThreshold, System.Action onArrive)
-    {
-        Vector3 dir = target.position - transform.position;
-        dir.y = 0f;
-
-        float dist = dir.magnitude;
-        if (dir != Vector3.zero)
+        if (currentState != State.WaitAtTV && happyParticles.activeSelf)
         {
-            dir.Normalize();
-            Quaternion lookRot = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, rotationSpeed * Time.deltaTime);
-
-            float angleDiff = Quaternion.Angle(transform.rotation, lookRot);
-            if (angleDiff < rotationCompleteThreshold)
-            {
-                if (dist > arriveThreshold)
-                {
-                    transform.position += dir * moveSpeed * Time.deltaTime;
-                }
-                else
-                {
-                    transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
-                    onArrive?.Invoke();
-                }
-            }
+            happyParticles.SetActive(false);
         }
     }
 
-    private void FaceIngredient(Transform target)
+    private void GoToNextWaypoint()
+    {
+        if (waypoints == null || waypoints.Length < 2) return;
+
+        if (Random.value < moveReverseWaypointChance)
+            waypointDirection *= -1;
+
+        currentWaypointIndex += waypointDirection;
+
+        if (currentWaypointIndex >= waypoints.Length)
+        {
+            currentWaypointIndex = waypoints.Length - 2;
+            waypointDirection = -1;
+        }
+        else if (currentWaypointIndex < 0)
+        {
+            currentWaypointIndex = 1;
+            waypointDirection = 1;
+        }
+
+        agent.SetDestination(waypoints[currentWaypointIndex].position);
+    }
+
+    private void FaceTarget(Transform target)
     {
         Vector3 dir = target.position - transform.position;
         dir.y = 0f;
-        if (dir != Vector3.zero)
+        if (dir.sqrMagnitude > 0.001f)
         {
-            dir.Normalize();
             Quaternion lookRot = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * 5f);
         }
     }
 
@@ -163,14 +144,15 @@ public class EnemyController : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            Debug.Log("Düşman önünde hata buldu! Nesne: " + hit.name);
+            Debug.Log("Spawnable tespit edildi: " + hit.name);
         }
     }
 
-    public void TriggerAnnouncement(Transform announcementWaypoint) //bu özelliği ekle
+    public void TriggerAnnouncement(Transform announcementWaypoint)
     {
         announcementTarget = announcementWaypoint;
         currentState = State.MoveToAnnouncement;
+        agent.SetDestination(announcementTarget.position);
     }
 
     private void OnDrawGizmosSelected()

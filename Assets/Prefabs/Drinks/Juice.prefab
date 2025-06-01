@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3401144536312909790}
   - component: {fileID: -4764245182755956695}
   - component: {fileID: 711823142456967828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Juice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
-  m_Name: Coke
+  m_Name: Tablet
   m_EditorClassIdentifier: 
-  shelfItemType: 12
-  shelfItemPrefab: {fileID: 593111843585410872, guid: d25421ed8f5b0c341ab87d272828b226,
+  shelfItemType: 24
+  shelfItemPrefab: {fileID: 9157928542310279287, guid: 50fd666499248ab47b2f9c7a0405353a,
     type: 3}

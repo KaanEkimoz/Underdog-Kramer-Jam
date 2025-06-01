@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
-  m_Name: Coke
+  m_Name: Television
   m_EditorClassIdentifier: 
-  shelfItemType: 12
-  shelfItemPrefab: {fileID: 593111843585410872, guid: d25421ed8f5b0c341ab87d272828b226,
+  shelfItemType: 26
+  shelfItemPrefab: {fileID: 4588257401745513790, guid: 875d42101011e99458954e88e7ec4b6a,
     type: 3}
