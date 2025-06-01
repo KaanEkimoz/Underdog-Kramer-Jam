@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5399445974838451398}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SnapPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapTransform: {fileID: 5399445974838451398}
-  snapGameObject: {fileID: 0}
+  shelfItemData: {fileID: 0}
+  shelfRenderer: {fileID: 5608777651859718371}
+  highlightColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &8706068256227379610
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ GameObject:
   - component: {fileID: 5608777651859718371}
   - component: {fileID: 5018949188405364613}
   - component: {fileID: 4305901205290620295}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShelfSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

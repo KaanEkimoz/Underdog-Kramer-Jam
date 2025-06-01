@@ -15,7 +15,7 @@ TagManager:
   - Pickupable
   - Player
   - PostProcessing
-  - 
+  - Ground
   - FirstPersonWeapon
   - PhysicalAmmo
   - Shelf

@@ -13,7 +13,14 @@ public class ShelvesManager : MonoBehaviour
 
         ShuffleAndSwapSpawn();
     }
+    public bool CheckIsAllOnCorrectPos()
+    {
+        foreach (var shelfDetector in shelves)
+            if (!shelfDetector.HasCorrectPickupable)
+                return false;
 
+        return true;
+    }
     private void ShuffleAndSwapSpawn()
     {
         // Listeyi karýþtýr

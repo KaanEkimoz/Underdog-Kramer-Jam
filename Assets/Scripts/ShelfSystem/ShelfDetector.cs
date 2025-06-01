@@ -10,13 +10,39 @@ public class ShelfDetector : MonoBehaviour
     private Pickupable currentPickupable;
     private Pickupable removedPickuapble;
 
+
+    //Highlight
+    [SerializeField] private Renderer shelfRenderer;
+    [SerializeField] private Color highlightColor = Color.green;
+    private Color defaultColor;
+    private bool isHighlighted = false;
+
     private void Start()
     {
+        if (shelfRenderer != null)
+            defaultColor = shelfRenderer.material.color;
     }
     private void OnTriggerStay(Collider other)
     {
-        if(!HasPickupable && other.TryGetComponent<Pickupable>(out currentPickupable) && !currentPickupable.IsPickedUp && !currentPickupable.IsOnShelf)
-            PlaceToShelf(currentPickupable);
+
+        if(!HasPickupable && other.TryGetComponent<Pickupable>(out currentPickupable) && !currentPickupable.IsOnShelf)
+        {
+            if (!isHighlighted)
+                HighlightShelf(true);
+
+            if (!currentPickupable.IsPickedUp)
+            {
+                PlaceToShelf(currentPickupable);
+            }
+        }
+            
+    }
+    private void HighlightShelf(bool shouldHighlight)
+    {
+        if (shelfRenderer == null) return;
+
+        shelfRenderer.material.color = shouldHighlight ? highlightColor : defaultColor;
+        isHighlighted = shouldHighlight;
     }
     private void PlaceToShelf(Pickupable pickupable)
     {
@@ -26,6 +52,7 @@ public class ShelfDetector : MonoBehaviour
         HasPickupable = true;
         SnapPickupableToSurface(pickupable.gameObject, snapTransform);
         Debug.Log(pickupable.name + " placed to shelf.");
+        HighlightShelf(false);
     }
     public void RemoveFromShelf(Pickupable pickupable)
     {
@@ -36,29 +63,25 @@ public class ShelfDetector : MonoBehaviour
     }
     private void SnapPickupableToSurface(GameObject pickupable, Transform snapTransform)
     {
-        if (pickupable.TryGetComponent<Renderer>(out Renderer renderer))
+        if (pickupable.TryGetComponent<Collider>(out Collider collider))
         {
-            // 1. Objenin alt noktasýný bul (bounds üzerinden)
-            Collider objCollider = pickupable.GetComponent<Collider>();
+            // 1. Collider'ýn local space'teki merkezini dünya uzayýna çevir
+            Vector3 localCenter = pickupable.transform.InverseTransformPoint(collider.bounds.center);
 
-            if (objCollider == null) return;
+            // 2. Offset: collider'ýn alt yüzeyi ile pivot arasý mesafe
+            float offsetY = localCenter.y - collider.bounds.extents.y;
 
-            // Bounds'un alt noktasýný bul
-            float objHalfY = pickupable.transform.localScale.y / 2;
+            // 3. SnapTransform pozisyonuna, offset kadar yukarý taþý
+            Vector3 finalPosition = snapTransform.position - new Vector3(0f, offsetY, 0f);
+            pickupable.transform.position = finalPosition;
 
-            // Platformun üst yüzeyi (Y koordinatý)
-            //float platformTopY = snapTransform.position.y + snapTransform.localScale.y / 2f;
-
-            // 2. Yükseklik farkýný hesapla ve pozisyonu ayarla
-            //float yOffset = platformTopY - objHalfY;
-            //pickupable.transform.position += new Vector3(0f, yOffset, 0f);
-
-            // 3. Objeyi platformun yönüne göre döndür
-            // Sadece yönü ayarlamak için objeyi platformun forward yönüne döndür
-            pickupable.transform.rotation = Quaternion.LookRotation(snapTransform.forward, Vector3.up);
-
-            pickupable.transform.position = snapTransform.position;
-            pickupable.transform.position += new Vector3(0, objHalfY, 0);
+            // 4. Yönü platformun yönüyle hizala
+            //pickupable.transform.rotation = Quaternion.LookRotation(snapTransform.forward, Vector3.up);
+            pickupable.transform.rotation = snapTransform.rotation;
+        }
+        else
+        {
+            Debug.LogWarning($"'{pickupable.name}' has no Collider, can't snap properly.");
         }
     }
     public void SpawnStartPickupable(GameObject shelfItem)

@@ -1,9 +1,10 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 public class PlayerPickup : MonoBehaviour
 {
     [Header("Pick Up Settings")]
-    [SerializeField] private float checkSphereRadius = 0.5f;
+    [SerializeField] private float checkSphereRadius = 0.2f;
     [SerializeField] private float maxPickupDistance = 3f;
     [SerializeField] private Transform pickupParent; // Kamera önüne objeyi konumlandýrmak için boþ bir GameObject
     [SerializeField] private LayerMask pickupLayer;
@@ -56,6 +57,7 @@ public class PlayerPickup : MonoBehaviour
     void TryPickup()
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
         if (Physics.SphereCast(ray, checkSphereRadius, out RaycastHit hit, maxPickupDistance, pickupLayer))
         {
             heldObject = hit.collider.gameObject;
@@ -114,5 +116,31 @@ public class PlayerPickup : MonoBehaviour
     {
         // Burada objenin boyutlarýna göre çakýþma kontrolü yapýyoruz
         return Physics.CheckBox(targetPos, extents, Quaternion.identity, obstacleLayer);
+    }
+    private void OnDrawGizmos()
+    {
+#if UNITY_EDITOR
+        if (!Application.isPlaying) return;
+
+        Camera cam = Camera.main;
+        if (cam == null) return;
+
+        Vector3 origin = cam.transform.position;
+        Vector3 direction = cam.transform.forward;
+
+        // SphereCast baþlangýç ve bitiþ pozisyonlarý
+        Vector3 start = origin;
+        Vector3 end = origin + direction * maxPickupDistance;
+
+        // Çizim rengi
+        Gizmos.color = new Color(0f, 1f, 1f, 0.5f); // Cam göbeði, yarý saydam
+
+        // Baþlangýç ve bitiþ noktalarýnda küre çiz
+        Gizmos.DrawWireSphere(start, checkSphereRadius);
+        Gizmos.DrawWireSphere(end, checkSphereRadius);
+
+        // Aradaki çizgi
+        Gizmos.DrawLine(start, end);
+#endif
     }
 }
