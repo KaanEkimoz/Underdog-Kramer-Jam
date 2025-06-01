@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4851693929180860308}
   m_Layer: 12
-  m_Name: Cokes
+  m_Name: Softener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 765313177714092392}
   - component: {fileID: 4745741747703923921}
   m_Layer: 12
-  m_Name: Beverage Shelf 01 (Fanta - Coke)
+  m_Name: Hygiene Shelf 01 (Detergent - Softener)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ed75e8eec579f84a8ed240c79a71622,
+      objectReference: {fileID: 11400000, guid: fff7ca17ba0d9994a8c4c448262d9821,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -319,7 +319,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 6926a0a1f20da3842a2bddac7f51f532,
+      objectReference: {fileID: 11400000, guid: 55e64368c7b796c4a8a01439198c4dd3,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -404,7 +404,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 6926a0a1f20da3842a2bddac7f51f532,
+      objectReference: {fileID: 11400000, guid: 55e64368c7b796c4a8a01439198c4dd3,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -489,7 +489,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 6926a0a1f20da3842a2bddac7f51f532,
+      objectReference: {fileID: 11400000, guid: 55e64368c7b796c4a8a01439198c4dd3,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -579,7 +579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ed75e8eec579f84a8ed240c79a71622,
+      objectReference: {fileID: 11400000, guid: fff7ca17ba0d9994a8c4c448262d9821,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -669,7 +669,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ed75e8eec579f84a8ed240c79a71622,
+      objectReference: {fileID: 11400000, guid: fff7ca17ba0d9994a8c4c448262d9821,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -759,7 +759,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ed75e8eec579f84a8ed240c79a71622,
+      objectReference: {fileID: 11400000, guid: fff7ca17ba0d9994a8c4c448262d9821,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -844,7 +844,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 6926a0a1f20da3842a2bddac7f51f532,
+      objectReference: {fileID: 11400000, guid: 55e64368c7b796c4a8a01439198c4dd3,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -934,7 +934,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 3ed75e8eec579f84a8ed240c79a71622,
+      objectReference: {fileID: 11400000, guid: fff7ca17ba0d9994a8c4c448262d9821,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}
@@ -1019,7 +1019,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shelfItemData
       value: 
-      objectReference: {fileID: 11400000, guid: 6926a0a1f20da3842a2bddac7f51f532,
+      objectReference: {fileID: 11400000, guid: 55e64368c7b796c4a8a01439198c4dd3,
         type: 2}
     - target: {fileID: 8706068256227379610, guid: 842afc826677ab7439267e6d1f7a70fa,
         type: 3}

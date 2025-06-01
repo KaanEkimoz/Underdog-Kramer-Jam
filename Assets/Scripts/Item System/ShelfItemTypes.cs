@@ -24,9 +24,7 @@ public enum ShelfItemTypes
 
     Fish,
     Chicken,
-    Salami,
-    Sausage,
-    Sujuk,
+    Meat,
 
     Laptop,
     Speaker,
@@ -46,5 +44,9 @@ public enum ShelfItemTypes
     Chocolate,
     Biscuit,
     Cracker,
-    Cake
+    Cake,
+
+    BookBlue,
+    BookRed,
+    Duck
 }

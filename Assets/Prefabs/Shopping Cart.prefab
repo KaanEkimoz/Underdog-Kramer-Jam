@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &430041367357688757
+--- !u!1 &7087470971359428372
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8688228688924603316}
-  - component: {fileID: 7060251865120701315}
-  - component: {fileID: 8321883271468458422}
+  - component: {fileID: 4790675986704538339}
+  - component: {fileID: 4136972690007039832}
+  - component: {fileID: 3209201281784322912}
   m_Layer: 0
-  m_Name: Chicken
+  m_Name: Shopping Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8688228688924603316
+--- !u!4 &4790675986704538339
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430041367357688757}
+  m_GameObject: {fileID: 7087470971359428372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8330446, y: 0.77475506, z: -0.39154983}
+  m_LocalPosition: {x: 0.019117313, y: 0.38809508, z: 0.053803608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7060251865120701315
+--- !u!33 &4136972690007039832
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430041367357688757}
-  m_Mesh: {fileID: -984591369705862039, guid: 2d209f90025434149a3f0759cbe3fac0, type: 3}
---- !u!23 &8321883271468458422
+  m_GameObject: {fileID: 7087470971359428372}
+  m_Mesh: {fileID: 8581429917654168797, guid: d1ec2cb90f87ed14eb1f7964024b158b, type: 3}
+--- !u!23 &3209201281784322912
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430041367357688757}
+  m_GameObject: {fileID: 7087470971359428372}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,8 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7534981014271404604, guid: 2d209f90025434149a3f0759cbe3fac0, type: 3}
-  - {fileID: 2445454350556630893, guid: 2d209f90025434149a3f0759cbe3fac0, type: 3}
+  - {fileID: 8580704480238593767, guid: d1ec2cb90f87ed14eb1f7964024b158b, type: 3}
+  - {fileID: 4931739312100697126, guid: d1ec2cb90f87ed14eb1f7964024b158b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
