@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e91d4e3d41e1004a89ab75599fa0bb9, type: 3}
+  m_Name: Item Concrete Collision Sound
+  m_EditorClassIdentifier: 
+  m_audioData:
+    m_clip: {fileID: 8300000, guid: f016c5b353fc14d46a1fe717b0fb82ce, type: 3}
+    m_mixerGroup: {fileID: 0}
+    m_loop: 0
+    m_isFrequent: 1
+    m_volume: {x: 0.9747476, y: 1}
+    m_pitch: {x: 0.8333327, y: 1.2121217}

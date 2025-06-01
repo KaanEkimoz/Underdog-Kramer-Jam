@@ -236,4 +236,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_soundAsset: {fileID: 11400000, guid: 962dbf3416c34bf41bc6d8b0151b71f0, type: 2}
   shelfItemData: {fileID: 11400000, guid: 1d101c0eeecf2724eab6e7a8ed210ba6, type: 2}

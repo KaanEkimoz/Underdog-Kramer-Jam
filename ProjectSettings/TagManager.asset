@@ -23,7 +23,7 @@ TagManager:
   - Spawnable
   - Lights
   - Interactable
-  - 
+  - PlayerBlocker
   - 
   - 
   - 
