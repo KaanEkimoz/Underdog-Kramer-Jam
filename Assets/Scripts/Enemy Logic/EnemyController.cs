@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
 
     private List<ShelfDetector> kizdigiRaflar = new();
 
-    private bool kizabilirMi = true;
+    private bool kiziyormu = true;
 
     private enum State { Patrol, MoveToTV, WaitAtTV, MoveToAnnouncement }
     private State currentState = State.Patrol;
@@ -162,7 +162,7 @@ public class EnemyController : MonoBehaviour
 
     private void ChechShelves()
     {
-        if (!kizabilirMi)
+        if (!kiziyormu)
             return;
 
         Vector3 center = transform.position + transform.rotation * boxOffset;
@@ -186,9 +186,9 @@ public class EnemyController : MonoBehaviour
 
     public IEnumerator KizmamaRutini()
     {
-        kizabilirMi = false;
+        kiziyormu = false;
         yield return new WaitForSeconds(60f);
-        kizabilirMi = true;
+        kiziyormu = true;
     }
 
     public void TriggerAnnouncement(Transform announcementWaypoint)

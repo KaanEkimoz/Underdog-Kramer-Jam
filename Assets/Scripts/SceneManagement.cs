@@ -7,7 +7,7 @@ public class SceneManagement : MonoBehaviour
     [SerializeField] private GameObject loseUI;
     [SerializeField] private TextMeshProUGUI kalanCanUI;
     [SerializeField] private EnemyController enemyController;
-
+    
     // Þu anki sahneyi yeniden yükler
 
     private void Start()
