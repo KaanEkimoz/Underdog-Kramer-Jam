@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.absence.attributes": "https://www.github.com/b1lodHand/absent-attributes.git",
+    "com.absence.soundsystem": "https://www.github.com/b1lodHand/absent-sounds.git",
+    "com.absence.timersystem": "https://www.github.com/b1lodHand/absent-timers.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.8",
     "com.unity.collab-proxy": "2.8.2",
