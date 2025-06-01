@@ -19,8 +19,8 @@ TagManager:
   - FirstPersonWeapon
   - PhysicalAmmo
   - Shelf
-  - 
-  - 
+  - Walkable
+  - Spawnable
   - 
   - 
   - 

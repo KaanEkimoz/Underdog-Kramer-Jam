@@ -36,14 +36,9 @@ public class RandomEventController : MonoBehaviour
         float random = Random.Range(0, 100f);
         if(random <= tvEventChance)
         {
-            if (tvController.IsOpen())
+            if (!tvController.IsOpen())
             {
-                tvController.CloseTV(); //bu zaten gerçekleþmez de nolur nolmaz kalsýn
-                //SpawnRandomItem();
-            }
-            else
-            {
-                tvController.OpenTV();
+                tvController.OpenTV(); 
             }
         }
         else
