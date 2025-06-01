@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Margarine
   m_EditorClassIdentifier: 
-  shelfItemType: 26
-  shelfItemPrefab: {fileID: 4588257401745513790, guid: 875d42101011e99458954e88e7ec4b6a,
+  shelfItemType: 35
+  shelfItemPrefab: {fileID: 1500970979725955529, guid: bb0c08ddfc1fd0f48be5428702e1eee6,
     type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Detergent
   m_EditorClassIdentifier: 
-  shelfItemType: 26
-  shelfItemPrefab: {fileID: 4588257401745513790, guid: 875d42101011e99458954e88e7ec4b6a,
+  shelfItemType: 32
+  shelfItemPrefab: {fileID: 4928929893028306786, guid: 0980ee7f865020e4f86fc83773ffb31d,
     type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Coke
   m_EditorClassIdentifier: 
-  shelfItemType: 12
+  shelfItemType: 8
   shelfItemPrefab: {fileID: 593111843585410872, guid: d25421ed8f5b0c341ab87d272828b226,
     type: 3}

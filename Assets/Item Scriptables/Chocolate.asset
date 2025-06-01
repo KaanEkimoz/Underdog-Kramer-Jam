@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Chocolate
   m_EditorClassIdentifier: 
-  shelfItemType: 26
-  shelfItemPrefab: {fileID: 4588257401745513790, guid: 875d42101011e99458954e88e7ec4b6a,
+  shelfItemType: 28
+  shelfItemPrefab: {fileID: 7058963791191474513, guid: e365f74c96c6c274e8be99df7178ec08,
     type: 3}

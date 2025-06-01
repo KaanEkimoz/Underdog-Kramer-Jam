@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Juice
   m_EditorClassIdentifier: 
-  shelfItemType: 14
+  shelfItemType: 10
   shelfItemPrefab: {fileID: 8430747392727463257, guid: e5406dc1c8f3a0342b27b3de33249a09,
     type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Book Blue
   m_EditorClassIdentifier: 
-  shelfItemType: 26
-  shelfItemPrefab: {fileID: 4588257401745513790, guid: 875d42101011e99458954e88e7ec4b6a,
+  shelfItemType: 29
+  shelfItemPrefab: {fileID: 5064915737045547987, guid: 5a7212bdaebbc5848b3e874b1f69bc00,
     type: 3}

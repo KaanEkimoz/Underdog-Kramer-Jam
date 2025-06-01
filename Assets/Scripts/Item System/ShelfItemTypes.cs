@@ -10,17 +10,10 @@ public enum ShelfItemTypes
     Lemon,
     Cauliflower,
 
-    Potato,
-    Pizza,
-    Schnitzel,
-    IceCream,
-
     Coke,
     Fanta,
     Juice,
-    Ayran,
     Milk,
-    MineralWater,
 
     Fish,
     Chicken,
@@ -42,11 +35,16 @@ public enum ShelfItemTypes
     ChipsYellow,
     ChipsRed,
     Chocolate,
-    Biscuit,
-    Cracker,
-    Cake,
 
     BookBlue,
     BookRed,
-    Duck
+    Duck,
+
+    Detergent,
+    Softener,
+
+    Ball,
+    Margarine,
+    Sleepy,
+    ToiletPaper
 }

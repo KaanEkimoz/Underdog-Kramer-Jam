@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Jam
   m_EditorClassIdentifier: 
-  shelfItemType: 26
-  shelfItemPrefab: {fileID: 4588257401745513790, guid: 875d42101011e99458954e88e7ec4b6a,
+  shelfItemType: 22
+  shelfItemPrefab: {fileID: 5694508975920034964, guid: 4fbc475b08052fe4da23db4cde14f0fe,
     type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
   m_Name: Tablet
   m_EditorClassIdentifier: 
-  shelfItemType: 24
+  shelfItemType: 17
   shelfItemPrefab: {fileID: 9157928542310279287, guid: 50fd666499248ab47b2f9c7a0405353a,
     type: 3}
