@@ -24,7 +24,7 @@ namespace com.game.player
         private void FixedUpdate()
         {
             bool hit = Physics.SphereCast(m_rayOrigin.position, m_errorRadius, m_rayOrigin.forward, out RaycastHit info, m_range, 
-                m_interactableMask, QueryTriggerInteraction.UseGlobal);
+                m_interactableMask, QueryTriggerInteraction.Collide);
 
             if (!hit)
             {

@@ -880,7 +880,7 @@ MonoBehaviour:
   m_rayOrigin: {fileID: 8146516608396761480}
   m_interactableMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 65536
   m_range: 1.67
   m_errorRadius: 0.13
 --- !u!1 &7383874627095517793
@@ -992,7 +992,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 39807
+    m_Bits: 129919
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
