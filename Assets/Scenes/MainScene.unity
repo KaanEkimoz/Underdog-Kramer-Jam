@@ -9384,7 +9384,7 @@ PrefabInstance:
     - target: {fileID: 5419266564408993649, guid: 2a9c0839426f68843bd946062ccf90b6,
         type: 3}
       propertyPath: swapChance
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
