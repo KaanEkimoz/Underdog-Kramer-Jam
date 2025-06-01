@@ -33,7 +33,7 @@ public class RandomEventController : MonoBehaviour
 
     public void RandomEvent()
     {
-        float random = Random.Range(0, 100f);
+        /*float random = Random.Range(0, 100f);
         if(random <= tvEventChance)
         {
             if (!tvController.IsOpen())
@@ -44,7 +44,7 @@ public class RandomEventController : MonoBehaviour
         else
         {
             SpawnRandomItem();
-        }
+        }*/
 
     }
 
