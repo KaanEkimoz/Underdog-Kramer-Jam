@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.Design;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -34,14 +36,21 @@ public class EnemyController : MonoBehaviour
     private int waypointDirection = 1;
     private bool isWatchingTV = false;
 
+    private List<ShelfDetector> kizdigiRaflar = new();
+
+    private bool kizabilirMi = true;
+
     private enum State { Patrol, MoveToTV, WaitAtTV, MoveToAnnouncement }
     private State currentState = State.Patrol;
+
+    public int kizmaCounter = 0;
 
     private void Awake()
     {
         happyParticles.SetActive(false);
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
+        kizmaCounter = 0;
     }
 
     private void Update()
@@ -153,22 +162,33 @@ public class EnemyController : MonoBehaviour
 
     private void ChechShelves()
     {
+        if (!kizabilirMi)
+            return;
+
         Vector3 center = transform.position + transform.rotation * boxOffset;
         Collider[] hits = Physics.OverlapBox(center, boxHalfExtents, transform.rotation, shelfLayer);
 
         foreach (Collider hit in hits)
         {
-            
             if (hit.TryGetComponent<ShelfDetector>(out ShelfDetector detector))
             {
-                if (!detector.HasCorrectPickupable) 
+                if (!kizdigiRaflar.Contains(detector) && !detector.HasCorrectPickupable) 
                 {
                     Debug.Log("boss kizdi");
-
+                    kizmaCounter++;
+                    kizdigiRaflar.Add(detector);
+                    StartCoroutine(KizmamaRutini());
                 }
 
             }
         }
+    }
+
+    public IEnumerator KizmamaRutini()
+    {
+        kizabilirMi = false;
+        yield return new WaitForSeconds(60f);
+        kizabilirMi = true;
     }
 
     public void TriggerAnnouncement(Transform announcementWaypoint)
