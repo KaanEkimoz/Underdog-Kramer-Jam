@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.ComponentModel.Design;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
@@ -19,6 +20,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Spawnable Detection")]
     [SerializeField] private LayerMask spawnableLayer;
+    public LayerMask shelfLayer;
     [SerializeField] private float detectionCooldown = 1.5f;
     private float detectionTimer = 0f;
 
@@ -145,6 +147,26 @@ public class EnemyController : MonoBehaviour
         foreach (Collider hit in hits)
         {
             Debug.Log("Spawnable tespit edildi: " + hit.name);
+        }
+    }
+
+    private void ChechShelves()
+    {
+        Vector3 center = transform.position + transform.rotation * boxOffset;
+        Collider[] hits = Physics.OverlapBox(center, boxHalfExtents, transform.rotation, shelfLayer);
+
+        foreach (Collider hit in hits)
+        {
+            
+            if (hit.TryGetComponent<ShelfDetector>(out ShelfDetector detector))
+            {
+                if (!detector.HasCorrectPickupable) 
+                {
+                    Debug.Log("boss kizdi");
+
+                }
+
+            }
         }
     }
 
