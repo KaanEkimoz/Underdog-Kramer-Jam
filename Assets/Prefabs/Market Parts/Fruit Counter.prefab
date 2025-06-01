@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3443237195785005106}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bananas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8279947352439390941}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Apples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4114077035812616274}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tangerines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5932918894892369631}
   - component: {fileID: 280517807992347608}
   - component: {fileID: 4004961595769796297}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fruit Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,9 +131,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2264234660674837805}
   serializedVersion: 2
-  m_LocalRotation: {x: -6.123236e-17, y: 1, z: 6.123236e-17, w: 0.00000034272668}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -21.64, y: 1.1350048, z: -9.73}
-  m_LocalScale: {x: 0.393295, y: 0.393295, z: 0.393295}
+  m_LocalScale: {x: 0.393295, y: 0.393295, z: 0.4530758}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3443237195785005106}
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6049441763712716689}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pears
   m_TagString: Untagged
   m_Icon: {fileID: 0}

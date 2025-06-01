@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3017296381904194726}
   - component: {fileID: -4841825764198635306}
   - component: {fileID: 3608743564827978328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Milk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shelfItemData: {fileID: 0}
+  shelfItemData: {fileID: 11400000, guid: 8bfcd425a3194f64882f47eafd220cca, type: 2}
