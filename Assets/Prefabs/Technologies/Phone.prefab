@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shelfItemData: {fileID: 0}
+  shelfItemData: {fileID: 11400000, guid: a9999b6a5b9359b4b89a294f9b46558c, type: 2}
 --- !u!65 &-1043723072010842735
 BoxCollider:
   m_ObjectHideFlags: 0

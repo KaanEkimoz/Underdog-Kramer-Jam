@@ -6,11 +6,12 @@ public class ShelvesManager : MonoBehaviour
     public List<ShelfDetector> shelves = new();
     [Range(0f, 1f)] public float swapChance = 0.5f;
 
+    private int mistakeCount = 0;
+
     private void Start()
     {
         if (shelves.Count == 0)
             shelves = Object.FindObjectsByType<ShelfDetector>(FindObjectsSortMode.None).ToList();
-
         ShuffleAndSwapSpawn();
     }
     public bool CheckIsAllOnCorrectPos()
@@ -21,6 +22,17 @@ public class ShelvesManager : MonoBehaviour
 
         return true;
     }
+    public int GetMistakenPickupables()
+    {
+        mistakeCount = 0;
+        foreach (var shelf in shelves)
+        {
+            if (!shelf.HasCorrectPickupable)
+                mistakeCount++;
+        }
+        return mistakeCount;
+    }
+
     private void ShuffleAndSwapSpawn()
     {
         // Listeyi karýþtýr
@@ -54,5 +66,4 @@ public class ShelvesManager : MonoBehaviour
             }
         }
     }
-
 }
