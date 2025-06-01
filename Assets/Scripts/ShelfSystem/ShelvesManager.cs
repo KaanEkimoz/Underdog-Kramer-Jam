@@ -12,7 +12,6 @@ public class ShelvesManager : MonoBehaviour
     {
         if (shelves.Count == 0)
             shelves = Object.FindObjectsByType<ShelfDetector>(FindObjectsSortMode.None).ToList();
-
         ShuffleAndSwapSpawn();
     }
     public bool CheckIsAllOnCorrectPos()
@@ -23,6 +22,17 @@ public class ShelvesManager : MonoBehaviour
 
         return true;
     }
+    public int GetMistakenPickupables()
+    {
+        mistakeCount = 0;
+        foreach (var shelf in shelves)
+        {
+            if (!shelf.HasCorrectPickupable)
+                mistakeCount++;
+        }
+        return mistakeCount;
+    }
+
     private void ShuffleAndSwapSpawn()
     {
         // Listeyi karýþtýr
@@ -56,16 +66,4 @@ public class ShelvesManager : MonoBehaviour
             }
         }
     }
-
-    public int GetMistakenPickupables()
-    {
-        mistakeCount = 0;
-        foreach( var shelf in shelves)
-        {
-            if (!shelf.HasCorrectPickupable)
-                mistakeCount++;
-        }
-        return mistakeCount;
-    }
-
 }

@@ -1141,6 +1141,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2729281214182533258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1262153204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.49731
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.579947
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.0000744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -8.659559e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1.2573145e-22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814378608680293793, guid: 85d7a137ceb40b74ba77c0876abfce3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Hygiene Shelf 02 (Sleepy - Toilet Paper)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85d7a137ceb40b74ba77c0876abfce3c, type: 3}
 --- !u!4 &1264605148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2141676431450117668, guid: cd17687759887a0438ee021e51abc9d9,
@@ -1530,6 +1598,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2729281214845312454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1692629382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.211143
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5799468
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.1481104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -8.659559e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1.2573145e-22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500657901850612233, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814378608680293793, guid: 4b2ae16d1555dea4bbf8075ceddba3ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Hygiene Shelf 01 (Detergent - Softener)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b2ae16d1555dea4bbf8075ceddba3ad, type: 3}
 --- !u!1001 &1745312803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28187,7 +28323,7 @@ GameObject:
   - component: {fileID: 8688568355959413239}
   - component: {fileID: 587808773175631946}
   - component: {fileID: 7388291000325470056}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: KasapTepsi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28315,7 +28451,7 @@ GameObject:
   - component: {fileID: 4147356385097975663}
   - component: {fileID: 3499721056090959181}
   - component: {fileID: 8958295702657895772}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Butcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28558,7 +28694,7 @@ GameObject:
   - component: {fileID: 4915446738483280544}
   - component: {fileID: 2020290129347678456}
   - component: {fileID: 2146046317765521707}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: KasapTepsi.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28684,7 +28820,7 @@ GameObject:
   - component: {fileID: 1428525043980809719}
   - component: {fileID: 4391153257191508505}
   - component: {fileID: 687992940952612942}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: KasapTepsi.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29284,3 +29420,5 @@ SceneRoots:
   - {fileID: 7783030584032371007}
   - {fileID: 543450653300481895}
   - {fileID: 399895441}
+  - {fileID: 1692629382}
+  - {fileID: 1262153204}
