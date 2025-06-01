@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fanta
   m_EditorClassIdentifier: 
   shelfItemType: 13
-  shelfItemPrefab: {fileID: 2595340859710832507, guid: 3dd5f639d04c01243b55ac938ea7cb13,
+  shelfItemPrefab: {fileID: 2113464668958219756, guid: 0f4ae5caf4d3127469f6a646543ff5fe,
     type: 3}

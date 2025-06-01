@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Coke
   m_EditorClassIdentifier: 
   shelfItemType: 12
-  shelfItemPrefab: {fileID: 2595340859710832507, guid: 3dd5f639d04c01243b55ac938ea7cb13,
+  shelfItemPrefab: {fileID: 593111843585410872, guid: d25421ed8f5b0c341ab87d272828b226,
     type: 3}
