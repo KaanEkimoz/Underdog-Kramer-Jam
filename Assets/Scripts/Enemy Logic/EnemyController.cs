@@ -72,6 +72,7 @@ public class EnemyController : MonoBehaviour
                 if (detectionTimer <= 0f)
                 {
                     ScanForSpawnables();
+                    ChechShelves();
                     detectionTimer = detectionCooldown;
                 }
                 break;
