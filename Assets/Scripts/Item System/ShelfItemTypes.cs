@@ -17,6 +17,7 @@ public enum ShelfItemTypes
 
     Coke,
     Fanta,
+    Juice,
     Ayran,
     MineralWater,
 

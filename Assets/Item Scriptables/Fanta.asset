@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d5a9714940e95d44890572bf7afef47, type: 3}
-  m_Name: Cauliflower
+  m_Name: Fanta
   m_EditorClassIdentifier: 
-  shelfItemType: 2
-  shelfItemPrefab: {fileID: 1452896960853138016, guid: 46bca2123b5a81c409190f9b2c617a52,
+  shelfItemType: 13
+  shelfItemPrefab: {fileID: 2595340859710832507, guid: 3dd5f639d04c01243b55ac938ea7cb13,
     type: 3}
