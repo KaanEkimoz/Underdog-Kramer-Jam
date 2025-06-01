@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9e8e56d0953764e9e25933aed11553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shelfItemData: {fileID: 0}
+  shelfItemData: {fileID: 11400000, guid: b3ea510efd40689458c24fca1bb15dfb, type: 2}
